@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,14 +12,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VirtualPet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bl-kq-9mo" userLabel="PetView">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="455.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="711.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-1b-eYw" userLabel="PetImgView">
-                                        <rect key="frame" x="462" y="178" width="100" height="100"/>
+                                        <rect key="frame" x="334" y="306" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="gV1-Dr-DgJ"/>
                                             <constraint firstAttribute="width" constant="100" id="gX8-I6-awI"/>
@@ -33,7 +33,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-cp-fA3" userLabel="playButton">
-                                <rect key="frame" x="40" y="475.5" width="452" height="40"/>
+                                <rect key="frame" x="40" y="731.5" width="324" height="40"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1Ev-c6-G5V"/>
@@ -41,7 +41,7 @@
                                 <state key="normal" title="Play"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KRz-0f-QNG">
-                                <rect key="frame" x="387.5" y="727.5" width="249" height="20.5"/>
+                                <rect key="frame" x="259.5" y="983.5" width="249" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Dog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZD-Jt-8of" userLabel="DogLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="32" height="20.5"/>
@@ -89,10 +89,10 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h8U-Lk-DIk" userLabel="status">
-                                <rect key="frame" x="40" y="535.5" width="944" height="152"/>
+                                <rect key="frame" x="40" y="791.5" width="688" height="152"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlR-RV-Hhn" userLabel="HappinessView">
-                                        <rect key="frame" x="0.0" y="0.0" width="944" height="66"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="688" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happiness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el5-Qs-9qk" userLabel="happinessLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="20.5"/>
@@ -101,12 +101,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XhS-80-NLn" userLabel="happinessDisplayView" customClass="DisplayView" customModule="VirtualPet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30.5" width="944" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="688" height="35.5"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Played: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSI-se-SXM" userLabel="Played">
-                                                <rect key="frame" x="873.5" y="0.0" width="70.5" height="20.5"/>
+                                                <rect key="frame" x="617.5" y="0.0" width="70.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbV-ne-gwh" userLabel="FoodLevelView">
-                                        <rect key="frame" x="0.0" y="86" width="944" height="66"/>
+                                        <rect key="frame" x="0.0" y="86" width="688" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI9-M0-INO" userLabel="foodLevelLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="83" height="20.5"/>
@@ -138,12 +138,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNv-OJ-ndo" userLabel="foodLevelDisplayView" customClass="DisplayView" customModule="VirtualPet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30.5" width="944" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="688" height="35.5"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fed: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcP-XC-ns3" userLabel="Fed">
-                                                <rect key="frame" x="895.5" y="0.0" width="48.5" height="20.5"/>
+                                                <rect key="frame" x="639.5" y="0.0" width="48.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -169,7 +169,7 @@
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxV-yi-g5I" userLabel="feedButton">
-                                <rect key="frame" x="532" y="475.5" width="452" height="40"/>
+                                <rect key="frame" x="404" y="731.5" width="324" height="40"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TrV-2s-6ZU"/>
