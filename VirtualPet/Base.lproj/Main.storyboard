@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,14 +12,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VirtualPet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bl-kq-9mo" userLabel="PetView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="711.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="345"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" translatesAutoresizingMaskIntoConstraints="NO" id="EJ1-1b-eYw" userLabel="PetImgView">
-                                        <rect key="frame" x="334" y="306" width="100" height="100"/>
+                                        <rect key="frame" x="137.5" y="122.5" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="gV1-Dr-DgJ"/>
                                             <constraint firstAttribute="width" constant="100" id="gX8-I6-awI"/>
@@ -32,67 +32,73 @@
                                     <constraint firstItem="EJ1-1b-eYw" firstAttribute="centerY" secondItem="4Bl-kq-9mo" secondAttribute="centerY" id="ZO8-HS-wfq"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxV-yi-g5I" userLabel="feedButton">
+                                <rect key="frame" x="207.5" y="365" width="127.5" height="40"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TrV-2s-6ZU"/>
+                                </constraints>
+                                <state key="normal" title="Feed"/>
+                                <connections>
+                                    <action selector="feedTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="55k-av-VNX"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-cp-fA3" userLabel="playButton">
-                                <rect key="frame" x="40" y="731.5" width="324" height="40"/>
+                                <rect key="frame" x="40" y="365" width="127.5" height="40"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1Ev-c6-G5V"/>
                                 </constraints>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="63t-t2-cBz"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KRz-0f-QNG">
-                                <rect key="frame" x="259.5" y="983.5" width="249" height="20.5"/>
+                                <rect key="frame" x="66" y="617" width="243" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Dog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZD-Jt-8of" userLabel="DogLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="32" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSn-aL-JXZ" userLabel="CatLabel">
-                                        <rect key="frame" x="52" y="0.0" width="27" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bird" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LL-Hj-q8H" userLabel="BirdLabel">
-                                        <rect key="frame" x="99" y="0.0" width="30.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bunny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OZ-2O-3kK" userLabel="BunnyLabel">
-                                        <rect key="frame" x="149.5" y="0.0" width="48" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOu-4V-ypt" userLabel="FishLabel">
-                                        <rect key="frame" x="217.5" y="0.0" width="31.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ech-HP-xKN" userLabel="dogButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="Dog"/>
+                                        <connections>
+                                            <action selector="dogSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0V4-FK-eTN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKX-5M-HtZ" userLabel="catButton">
+                                        <rect key="frame" x="50" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="Cat"/>
+                                        <connections>
+                                            <action selector="catSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LhV-16-54D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EH-OX-CBC" userLabel="birdButton">
+                                        <rect key="frame" x="100" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="Bird"/>
+                                        <connections>
+                                            <action selector="birdSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rpr-Vj-fIC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjg-FW-AQf" userLabel="fishButton">
+                                        <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="Fish"/>
+                                        <connections>
+                                            <action selector="fishSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zpB-EY-dO9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCN-az-WWy" userLabel="bunnyButton">
+                                        <rect key="frame" x="200" y="0.0" width="43" height="30"/>
+                                        <state key="normal" title="Bunny"/>
+                                        <connections>
+                                            <action selector="bunnySwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdS-xv-Nub"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="9LL-Hj-q8H" secondAttribute="bottom" constant="10" id="WTu-Vr-jl9"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="WTu-Vr-jl9"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="WTu-Vr-jl9"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h8U-Lk-DIk" userLabel="status">
-                                <rect key="frame" x="40" y="791.5" width="688" height="152"/>
+                                <rect key="frame" x="40" y="425" width="295" height="152"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlR-RV-Hhn" userLabel="HappinessView">
-                                        <rect key="frame" x="0.0" y="0.0" width="688" height="66"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happiness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el5-Qs-9qk" userLabel="happinessLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="81" height="20.5"/>
@@ -101,12 +107,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XhS-80-NLn" userLabel="happinessDisplayView" customClass="DisplayView" customModule="VirtualPet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30.5" width="688" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="295" height="35.5"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Played: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSI-se-SXM" userLabel="Played">
-                                                <rect key="frame" x="617.5" y="0.0" width="70.5" height="20.5"/>
+                                                <rect key="frame" x="224.5" y="0.0" width="70.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -129,7 +135,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbV-ne-gwh" userLabel="FoodLevelView">
-                                        <rect key="frame" x="0.0" y="86" width="688" height="66"/>
+                                        <rect key="frame" x="0.0" y="86" width="295" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tI9-M0-INO" userLabel="foodLevelLabel">
                                                 <rect key="frame" x="0.0" y="0.0" width="83" height="20.5"/>
@@ -138,12 +144,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNv-OJ-ndo" userLabel="foodLevelDisplayView" customClass="DisplayView" customModule="VirtualPet" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="30.5" width="688" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="30.5" width="295" height="35.5"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fed: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcP-XC-ns3" userLabel="Fed">
-                                                <rect key="frame" x="639.5" y="0.0" width="48.5" height="20.5"/>
+                                                <rect key="frame" x="246.5" y="0.0" width="48.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -168,14 +174,6 @@
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxV-yi-g5I" userLabel="feedButton">
-                                <rect key="frame" x="404" y="731.5" width="324" height="40"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="TrV-2s-6ZU"/>
-                                </constraints>
-                                <state key="normal" title="Feed"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -204,6 +202,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="fedTimesLabel" destination="WcP-XC-ns3" id="rio-2v-Sbw"/>
+                        <outlet property="foodLevelBar" destination="PNv-OJ-ndo" id="B2V-qX-gwT"/>
+                        <outlet property="happinessBar" destination="XhS-80-NLn" id="8pN-Ch-6Ko"/>
+                        <outlet property="petBackground" destination="4Bl-kq-9mo" id="0mr-SY-q0X"/>
+                        <outlet property="petImage" destination="EJ1-1b-eYw" id="bSq-HA-4DD"/>
+                        <outlet property="playedTimesLabel" destination="FSI-se-SXM" id="0SP-gb-aWP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
