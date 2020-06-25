@@ -11,7 +11,8 @@ import UIKit
 
 class Pet {
     var type: String
-    var name: String
+    
+    var status: String?
     var currentFoodLevel: Int
     var currentHappiness: Int
     var totalFeedTimes: Int
@@ -19,9 +20,8 @@ class Pet {
     var image: UIImage?
     var color: UIColor?
     
-    public init(type: String, name: String) {
+    public init(type: String) {
         self.type = type
-        self.name = name
         self.currentFoodLevel = 0
         self.currentHappiness = 0
         self.totalFeedTimes = 0
@@ -33,15 +33,15 @@ class Pet {
     private func getColor(_ type: String) -> UIColor? {
         switch type {
             case "cat":
-                return UIColor(red: 51.0/255, green: 153.0/255, blue: 204.0/255, alpha: 1.0)
+                return UIColor(red: 50.0/255, green: 150.0/255, blue: 200.0/255, alpha: 1.0)
             case "dog":
-                return UIColor(red: 1.0, green: 0.0, blue: 51.0/255, alpha: 1.0)
+                return UIColor(red: 1.0, green: 0.0, blue: 50.0/255, alpha: 1.0)
             case "bird":
-                return UIColor(red: 1.0, green: 204.0/255, blue: 0.0, alpha: 1.0)
+                return UIColor(red: 255.0/255, green: 255.0/255, blue: 0.0, alpha: 1.0)
             case "bunny":
-                return UIColor(red: 51.0/255, green: 204.0/255, blue: 102.0/255, alpha: 1.0)
+                return UIColor(red: 50.0/255, green: 200.0/255, blue: 100.0/255, alpha: 1.0)
             case "fish":
-                return UIColor(red: 204.0/255, green: 102.0/255, blue: 1.0, alpha: 1.0)
+                return UIColor(red: 200.0/255, green: 100.0/255, blue: 1.0, alpha: 1.0)
                 
             default:
                 return UIColor.clear
@@ -64,5 +64,9 @@ class Pet {
             totalPlayTimes = totalPlayTimes + 1
             currentFoodLevel = currentFoodLevel - 1
         }
+    }
+    
+    public func setStatus(_ status: String) {
+        self.status = status
     }
 }

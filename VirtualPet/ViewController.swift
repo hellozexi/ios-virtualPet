@@ -9,11 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var cat = Pet(type: "cat", name: "");
-    var dog = Pet(type: "dog", name: "");
-    var fish = Pet(type: "fish", name: "");
-    var bird = Pet(type: "bird", name: "");
-    var bunny = Pet(type: "bunny", name: "");
+    var cat = Pet(type: "cat");
+    var dog = Pet(type: "dog");
+    var fish = Pet(type: "fish");
+    var bird = Pet(type: "bird");
+    var bunny = Pet(type: "bunny");
     
 
     @IBOutlet weak var foodLevelBar: DisplayView!
@@ -25,40 +25,48 @@ class ViewController: UIViewController {
     
     @IBAction func playTouched(_ sender: UIButton) {
         currentPet.play()
-        updateStatus()
+        updateData()
         
     }
     @IBAction func feedTouched(_ sender: UIButton) {
         currentPet.feed()
-        updateStatus()
+        updateData()
     }
     @IBAction func dogSwitch(_ sender: UIButton) {
         currentPet = dog
-        updateStatus()
+        updateData()
         updateImg()
         updateBackground()
     }
     @IBAction func catSwitch(_ sender: UIButton) {
         currentPet = cat
-        updateStatus()
+        updateData()
         updateImg()
         updateBackground()
     }
     @IBAction func birdSwitch(_ sender: UIButton) {
         currentPet = bird
-        updateStatus()
+        updateData()
         updateImg()
         updateBackground()
     }
+    @IBAction func reset(_ sender: UIButton) {
+        currentPet.currentFoodLevel = 0
+        currentPet.currentHappiness = 0
+        currentPet.totalFeedTimes = 0
+        currentPet.totalPlayTimes = 0
+        updateData()
+        
+    }
     @IBAction func fishSwitch(_ sender: UIButton) {
         currentPet = fish
-        updateStatus()
+        updateData()
         updateImg()
         updateBackground()
     }
     @IBAction func bunnySwitch(_ sender: UIButton) {
         currentPet = bunny
-        updateStatus()
+        updateData()
         updateImg()
         updateBackground()
     }
@@ -66,6 +74,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var petBackground: UIView!
     var currentPet: Pet!
     
+    @IBOutlet weak var statusLabel: UILabel!
     public func updateBackground() {
         petBackground.backgroundColor = currentPet.color
         foodLevelBar.color = currentPet.color!
@@ -75,19 +84,27 @@ class ViewController: UIViewController {
     public func updateImg() {
         petImage.image = currentPet.image
     }
-    public func updateStatus() {
+    public func updateData() {
         playedTimesLabel.text = "Played: \(currentPet.totalPlayTimes)"
         fedTimesLabel.text = "Fed: \(currentPet.totalFeedTimes)"
-        foodLevelBar.animateValue(to: CGFloat(Double(currentPet.currentFoodLevel / 10)))
-        happinessBar.animateValue(to: CGFloat(Double(currentPet.currentHappiness / 10)))
+        foodLevelBar.animateValue(to: CGFloat(Double(currentPet.currentFoodLevel) / 10))
+        happinessBar.animateValue(to: CGFloat(Double(currentPet.currentHappiness) / 10))
+        if(currentPet.currentHappiness > 7) {
+            currentPet.setStatus("happy")
+            
+        } else if(currentPet.currentFoodLevel < 3) {
+            currentPet.setStatus("hungry")
+            
+        }
+        statusLabel.text = "Status: \(currentPet.status ?? "")"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         currentPet = cat
-        updateStatus()
         updateImg()
         updateBackground()
+        //updateStatus()
     }
     
 
